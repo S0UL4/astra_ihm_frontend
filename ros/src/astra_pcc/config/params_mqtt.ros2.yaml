@@ -1,0 +1,16 @@
+/**/*:
+  ros__parameters:
+    broker:
+      host: 192.168.0.107
+      port: 1883
+    bridge:
+      ros2mqtt:
+        ros_topics: 
+          - /joy
+        /joy:
+          mqtt_topic: mqtt/joy
+      # mqtt2ros:
+      #   mqtt_topics: 
+      #     - /zed_camera_front/state
+      #   /zed_camera_front/state:
+      #     ros_topic: /disable_isaac_zed
