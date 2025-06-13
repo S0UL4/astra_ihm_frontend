@@ -1,0 +1,5 @@
+<launch>
+  <node name="joy" pkg="joy" exec="joy_node">
+    <param from="$(find-pkg-share astra_pcc)/config/joy.yaml"/>
+  </node>
+</launch>

@@ -1,0 +1,6 @@
+joy:
+  ros__parameters:
+    dev: "/dev/input/js0"
+    deadzone: 0.0 # Handled in teleop node
+    autorepeat_rate:  20.0 # Hz
+    coalesce_interval: 0.01 # seconds

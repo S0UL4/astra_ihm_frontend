@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find-pkg-share astra_pcc)/launch/joy_teleop.launch.xml"/>
+    <include file="$(find-pkg-share astra_pcc)/launch/standalone_mqtt.launch.ros2.xml"/>
+</launch>
