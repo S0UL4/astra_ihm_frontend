@@ -2,12 +2,12 @@
 # @Author: Iheb Soula
 # @Date:   2025-06-02 14:49:02
 # @Last Modified by:   Your name
-# @Last Modified time: 2025-06-02 14:51:10
+# @Last Modified time: 2025-06-13 15:46:00
 #!/bin/bash
 set -e
 
 # Define targets array
-targets=("barakuda_speed_panel" "control_sensors" "sensors_status_barakuda" "RobotPositionPlugin" "LisierePanel" "BatteryLevelPanel")
+targets=("barakuda_speed_panel" "control_sensors" "sensors_status_barakuda" "RobotPositionPlugin" "LisierePanel" "BatteryLevelPanel" "SafetyModuleAssist")
 
 # Save the current directory
 orig_dir=$(pwd)
