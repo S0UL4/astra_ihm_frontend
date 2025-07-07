@@ -1,6 +1,6 @@
 {
   "configById": {
-    "Image!2sifht": {
+    "Image!u4hl4s": {
       "cameraState": {
         "distance": 20,
         "perspective": true,
@@ -41,35 +41,33 @@
         "poseEstimateThetaDeviation": 0.26179939
       },
       "imageMode": {
-        "imageTopic": "/intel_realsense_r200_rgb/image_raw",
-        "calibrationTopic": "/intel_realsense_r200_rgb/camera_info",
-        "synchronize": false,
-        "flipHorizontal": false,
-        "flipVertical": false,
-        "rotation": 0,
-        "colorMode": "gradient",
+        "imageTopic": "/zed_front/zed_node/rgb/image_rect_color/compressed",
+        "calibrationTopic": "/zed_front/zed_node/rgb/camera_info",
         "annotations": {
-          "/camera/image_annotations": {
+          "/annotations": {
             "visible": true
           },
-          "/annotations": {
-            "visible": false
+          "/annotations_nav": {
+            "visible": true
+          },
+          "/annotations_teleop_assisst": {
+            "visible": true
           }
-        }
-      },
-      "foxglovePanelTitle": "Camera Avant du Robot"
+        },
+        "synchronize": false
+      }
     },
     "LisierePanel.LisierePanel!49uv9qw": {},
     "3D!3l89jeo": {
       "cameraState": {
         "perspective": true,
-        "distance": 8.808978371093541,
-        "phi": 59.85886435162386,
-        "thetaOffset": 98.11084810502348,
+        "distance": 4.75653770510307,
+        "phi": 58.24654331898525,
+        "thetaOffset": -172.30615752963817,
         "targetOffset": [
-          0.12892702417361118,
-          -0.9939469527022068,
-          0.9999999999999999
+          -4.882145737650814,
+          10.489436536889274,
+          -1.130159176641523e-16
         ],
         "target": [
           0,
@@ -86,8 +84,8 @@
         "near": 1.5,
         "far": 5000
       },
-      "followMode": "follow-position",
-      "followTf": "ground_link",
+      "followMode": "follow-pose",
+      "followTf": "odom",
       "scene": {
         "transforms": {
           "showLabel": true,
@@ -176,7 +174,7 @@
           "visible": false
         },
         "frame:lidar_link": {
-          "visible": true
+          "visible": false
         },
         "frame:livox_frame_left": {
           "visible": false
@@ -195,11 +193,38 @@
         },
         "frame:rear_right_wheel_link": {
           "visible": false
+        },
+        "frame:zed_front_camera_link": {
+          "visible": false
+        },
+        "frame:zed_front_camera_center": {
+          "visible": false
+        },
+        "frame:zed_front_left_camera_frame": {
+          "visible": false
+        },
+        "frame:zed_front_imu_link": {
+          "visible": false
+        },
+        "frame:zed_front_left_camera_optical_frame": {
+          "visible": false
+        },
+        "frame:zed_front_right_camera_frame": {
+          "visible": false
+        },
+        "frame:zed_front_right_camera_optical_frame": {
+          "visible": false
+        },
+        "frame:bpearl_link_front": {
+          "visible": false
+        },
+        "frame:bpearl_link_rear": {
+          "visible": false
         }
       },
       "topics": {
         "/local_plan": {
-          "visible": true,
+          "visible": false,
           "gradient": [
             "#ff6b6bff",
             "#ff0000ff"
@@ -207,12 +232,12 @@
           "lineWidth": 0.3
         },
         "/received_global_plan": {
-          "visible": true,
+          "visible": false,
           "lineWidth": 0.1
         },
         "/local_costmap/costmap": {
-          "visible": true,
-          "colorMode": "costmap",
+          "visible": false,
+          "colorMode": "map",
           "drawBehind": true,
           "alpha": 1
         },
@@ -220,10 +245,10 @@
           "visible": false
         },
         "/map": {
-          "visible": true
+          "visible": false
         },
         "/astra_lidar/data_filtered": {
-          "visible": true,
+          "visible": false,
           "colorField": "intensity",
           "colorMode": "colormap",
           "colorMap": "turbo",
@@ -321,7 +346,7 @@
           "visible": false
         },
         "/robot_description": {
-          "visible": true,
+          "visible": false,
           "links": {
             "base_link": {
               "visible": true
@@ -330,7 +355,7 @@
           "displayMode": "auto"
         },
         "/barakuda_mesh": {
-          "visible": true,
+          "visible": false,
           "namespaces": {
             "mesh": {
               "visible": true
@@ -350,11 +375,96 @@
             "#ff0000ff",
             "#f70000ff"
           ]
+        },
+        "/assisted_teleop/escape_path": {
+          "visible": true,
+          "lineWidth": 0.2
+        },
+        "/visualization_marker": {
+          "visible": false
+        },
+        "/local_costmap/stvl_layer": {
+          "visible": false
+        },
+        "/local_costmap/published_footprint": {
+          "visible": true
+        },
+        "/global_costmap/published_footprint": {
+          "visible": false
+        },
+        "/slope": {
+          "visible": true
+        },
+        "/roughness": {
+          "visible": false
+        },
+        "/local_costmap/static_layer": {
+          "visible": false
+        },
+        "/elevation_mapping/elevation_map_raw": {
+          "interpolationMethod": "Linear",
+          "visible": false,
+          "showLines": false,
+          "lineColor": "#000000",
+          "useLighting": true,
+          "elevationLayer": "elevation",
+          "colorGradient": [
+            "#000000",
+            "#ffffff"
+          ]
+        },
+        "/global_costmap/obstacle_layer": {
+          "visible": false
+        },
+        "/zed_front/zed_node/stereo/image_rect_color/compressedDepth": {
+          "visible": false
+        },
+        "/keepout_filter_mask": {
+          "visible": false
+        },
+        "/traversability_map": {
+          "interpolationMethod": "Linear",
+          "visible": false,
+          "showLines": false,
+          "lineColor": "#000000",
+          "useLighting": true,
+          "elevationLayer": "elevation_inpainted",
+          "colorGradient": [
+            "#000000",
+            "#ffffff"
+          ]
+        },
+        "/traversability_grid": {
+          "visible": false
+        },
+        "/rslidar_points_rear/data_filtered": {
+          "visible": false,
+          "colorField": "intensity",
+          "colorMode": "colormap",
+          "colorMap": "turbo"
+        },
+        "/livox/lidar_right_filtered": {
+          "visible": false,
+          "colorField": "intensity",
+          "colorMode": "colormap",
+          "colorMap": "turbo"
+        },
+        "/livox/lidar_right": {
+          "visible": false,
+          "colorField": "intensity",
+          "colorMode": "colormap",
+          "colorMap": "turbo"
+        },
+        "/livox/lidar_left_filtered": {
+          "visible": false,
+          "colorField": "intensity",
+          "colorMode": "colormap",
+          "colorMap": "turbo"
         }
       },
       "layers": {
         "grid": {
-          "visible": true,
+          "visible": false,
           "frameLocked": true,
           "label": "Grid",
           "instanceId": "ed83c12e-c83c-4370-8a9a-68066e330c57",
@@ -379,7 +489,7 @@
           "fallbackColor": "#ffffff",
           "showAxis": false,
           "axisScale": 1,
-          "visible": true,
+          "visible": false,
           "frameLocked": true,
           "instanceId": "6aab2b94-3a04-46cf-bbd2-6db7a601e21b",
           "label": "Barakuda Description",
@@ -405,58 +515,49 @@
       "imageMode": {},
       "foxglovePanelTitle": "Navigation Map avec Obstacles"
     },
-    "map!4k9l2tv": {
+    "map!2oyq8q7": {
+      "center": {
+        "lat": 49.384676561999996,
+        "lon": 1.0752464210000001
+      },
       "customTileUrl": "",
-      "disabledTopics": [
-        "/gps/fix"
-      ],
+      "disabledTopics": [],
       "followTopic": "/loc/gps_filtered",
       "layer": "satellite",
       "topicColors": {},
       "zoomLevel": 20,
       "maxNativeZoom": 18,
       "topicConfig": {
-        "/gps/filtered": {
-          "pointDisplayMode": "dot",
-          "historyMode": "none"
-        },
-        "/gps/fix": {
+        "/loc/gnss_reference": {
           "pointDisplayMode": "dot",
           "historyMode": "all"
         },
         "/loc/gps_filtered": {
-          "historyMode": "all",
-          "pointDisplayMode": "dot"
+          "pointDisplayMode": "dot",
+          "historyMode": "all"
         },
         "/sensor/sbg/imu/nav_sat_fix": {
-          "historyMode": "all",
-          "pointDisplayMode": "dot"
+          "pointDisplayMode": "dot",
+          "historyMode": "all"
         },
-        "/loc/gnss_reference": {
-          "historyMode": "all",
-          "pointDisplayMode": "dot"
+        "/sensor/sbg/loc/fix": {
+          "pointDisplayMode": "dot",
+          "historyMode": "all"
         }
-      },
-      "foxglovePanelTitle": "GPS Map",
-      "center": {
-        "lat": 49.384560848999996,
-        "lon": 1.075165985
       }
     },
-    "control_sensors.Control sensors!1gyksia": {},
-    "BatteryLevelPanel.BatteryViewer!3nmg2av": {},
-    "RawMessages!3rqmf2w": {
-      "diffEnabled": false,
-      "diffMethod": "custom",
-      "diffTopicPath": "",
-      "showFullMessageForDiff": false,
-      "topicPath": "/LEFT/edge_tracking_control/feedback",
-      "fontSize": 12
+    "TrajectoryHandler.TrajectoryMissionHandler!4dleh0q": {
+      "nearest_point_start": false,
+      "reverse_gear": false,
+      "last_status": "Backtrack Reset"
     },
+    "control_sensors.Control sensors!1gyksia": {},
+    "SafetyModuleAssist.SafetyFirstAssist!diqj4v": {},
+    "sensors_status_barakuda.Sensors status!t3cclk": {},
     "RobotPositionPlugin.RobotPositionPanel!319g4dl": {},
-    "barakuda_speed_panel.Vitesse Barakuda!1jnb505": {},
+    "BatteryLevelPanel.BatteryViewer!3nmg2av": {},
     "Indicator!179sps": {
-      "path": "/mode_auto.data",
+      "path": "/teleop/state.teleop_mode",
       "style": "bulb",
       "fontSize": 36,
       "fallbackColor": "#0048ff",
@@ -464,38 +565,44 @@
       "rules": [
         {
           "operator": "=",
-          "rawValue": "true",
+          "rawValue": "1",
           "color": "#68e24a",
           "label": "Mode Automatique"
         }
       ],
       "foxglovePanelTitle": "Mode Auto"
     },
-    "sensors_status_barakuda.Sensors status!t3cclk": {},
+    "barakuda_speed_panel.Vitesse Barakuda!1jnb505": {},
     "Tab!18bfato": {
-      "activeTabIdx": 0,
+      "activeTabIdx": 1,
       "tabs": [
         {
           "title": "Astra Nav",
           "layout": {
             "first": {
-              "first": "Image!2sifht",
+              "first": "Image!u4hl4s",
               "second": "LisierePanel.LisierePanel!49uv9qw",
-              "direction": "column"
+              "direction": "column",
+              "splitPercentage": 57.163742690058484
             },
             "second": {
               "first": "3D!3l89jeo",
-              "second": "map!4k9l2tv",
+              "second": "map!2oyq8q7",
               "direction": "column",
-              "splitPercentage": 50.03903200624512
+              "splitPercentage": 57.01754385964912
             },
             "direction": "row",
-            "splitPercentage": 32.62226847034339
+            "splitPercentage": 49.765990639625585
           }
         },
         {
           "title": "Ctrl Capteurs",
-          "layout": "control_sensors.Control sensors!1gyksia"
+          "layout": {
+            "first": "TrajectoryHandler.TrajectoryMissionHandler!4dleh0q",
+            "second": "control_sensors.Control sensors!1gyksia",
+            "direction": "row",
+            "splitPercentage": 54.37044745057232
+          }
         }
       ]
     }
@@ -509,30 +616,29 @@
     "first": {
       "first": {
         "first": {
-          "first": {
-            "first": "BatteryLevelPanel.BatteryViewer!3nmg2av",
-            "second": "RawMessages!3rqmf2w",
+          "first": "SafetyModuleAssist.SafetyFirstAssist!diqj4v",
+          "second": {
+            "first": "sensors_status_barakuda.Sensors status!t3cclk",
+            "second": "RobotPositionPlugin.RobotPositionPanel!319g4dl",
             "direction": "row"
           },
-          "second": "RobotPositionPlugin.RobotPositionPanel!319g4dl",
           "direction": "row",
-          "splitPercentage": 76.13837431467022
+          "splitPercentage": 33.18869680808274
         },
-        "second": "barakuda_speed_panel.Vitesse Barakuda!1jnb505",
+        "second": {
+          "first": "BatteryLevelPanel.BatteryViewer!3nmg2av",
+          "second": "Indicator!179sps",
+          "direction": "column"
+        },
         "direction": "row",
-        "splitPercentage": 71.67470709855272
+        "splitPercentage": 71.57103751811496
       },
-      "second": {
-        "first": "Indicator!179sps",
-        "second": "sensors_status_barakuda.Sensors status!t3cclk",
-        "direction": "column",
-        "splitPercentage": 35.87786259541985
-      },
+      "second": "barakuda_speed_panel.Vitesse Barakuda!1jnb505",
       "direction": "row",
-      "splitPercentage": 75.4942767950052
+      "splitPercentage": 76.83307332293292
     },
     "second": "Tab!18bfato",
     "direction": "column",
-    "splitPercentage": 27.299703264094955
+    "splitPercentage": 28.28882294757666
   }
 }
