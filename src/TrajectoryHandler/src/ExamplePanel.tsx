@@ -2,15 +2,22 @@ import { PanelExtensionContext } from "@foxglove/extension";
 import { createRoot } from "react-dom/client";
 import { useRef, useState, useEffect, useLayoutEffect } from "react";
 
+// const scenarioList = [
+//   "scenario_1_ep1",
+//   "scenario_1_ep2",
+//   "scenario_1_ep3",
+//   "scenario_2",
+//   "scenario_3_ep1",
+//   "scenario_3_ep2",
+//   "scenario_mixte",
+// ];
+
 const scenarioList = [
-  "scenario_1_ep1",
-  "scenario_1_ep2",
-  "scenario_1_ep3",
-  "scenario_2",
-  "scenario_3_ep1",
-  "scenario_3_ep2",
-  "scenario_mixte",
+  "scenario_1_epreuve_1",
+  "scenario_2_epreuve_1",
+  "scenario_3_epreuve_1"
 ];
+
 
 const buttonBaseStyle: React.CSSProperties = {
   padding: "0.5rem 1rem",
@@ -265,7 +272,7 @@ function ZoneScenarioPanel({ context }: { context: PanelExtensionContext }) {
           </PressableButton>
         </div>
 
-        <PressableButton style={redButtonStyle} onClick={() => callService("/mission_handler/scenario_handler/cancel_mission", {})}>
+        <PressableButton style={redButtonStyle} onClick={() => callService("/mission_handler/scenario_handler/load_wps/cancel_task", {})}>
           Annuler Mission
         </PressableButton>
       </div>
